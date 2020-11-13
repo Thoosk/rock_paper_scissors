@@ -1,0 +1,165 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* RESET */
+/* prettier-ignore */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 62.5%;
+    font: inherit;
+    font-family: Bookman, URW Bookman L, serif ;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+/* prettier-ignore */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: york;
+  src: url(fonts/york-whiteletter/yorkwhiteletter.otf);
+}
+
+@font-face {
+  font-family: king_arthur;
+  src: url(fonts/king-arthur/KING_ARTHUR.ttf);
+}
+
+#viewport {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background-color: #f79e8c;
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+#main h1 {
+  font-family: york;
+  font-size: 10rem;
+}
+
+#buttons {
+  width: 100vh;
+  display: flex;
+  flex: row wrap;
+  justify-content: space-around;
+}
+
+.choice {
+  width: 20rem;
+  height: 20rem;
+  margin: 0 5rem 0 5rem;
+  transition: all 0.07s ease;
+}
+
+.press {
+  transform: scale(0.8);
+}
+
+.first {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  margin-top: -4rem;
+  width: 5em;
+  height: 5rem;
+}
+
+#rock {
+  background: url(images/fist2.png) no-repeat center center;
+  border: none;
+}
+
+#paper {
+  background: url(images/paper.png) no-repeat center center;
+  border: none;
+}
+
+#scissors {
+  background: url(images/scissors.png) no-repeat center center;
+  border: none;
+}
+
+#scoreboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#scoreboard h2 {
+  /*font-family: king_arthur;*/
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 1rem;
+  text-shadow: black 1px 0.5px;
+}
+
+#scoreboard p {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-top: 3rem;
+}
+
+#results {
+  margin-top: 7rem;
+}
+
+#results h2 {
+  font-size: 3rem;
+  font-weight: bold;
+}

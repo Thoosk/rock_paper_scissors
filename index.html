@@ -3,137 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
     <title>RPS</title>
   </head>
-  <body></body>
+  <body>
+    <div id="viewport">
+      <div id="main">
+        <h1>Ärock_paper_scissorsÅ</h1>
+        <section id="scoreboard">
+          <h2>SCOREBOARD</h2>
+          <br />
+          <p>PLAYER 0 VS COMPUTER 0</p>
+        </section>
+        <div id="buttons">
+          <section class="first">
+            <button class="choice" id="rock"></button>
+            <img src="images/R.png" height="auto" />
+          </section>
+          <section class="first">
+            <button class="choice" id="paper"></button>
+            <img src="images/P.png" height="auto" />
+          </section>
+          <section class="first">
+            <button class="choice" id="scissors"></button>
+            <img src="images/S.png" height="auto" />
+          </section>
+        </div>
+        <div id="results">
+          <h2></h2>
+        </div>
+      </div>
+    </div>
+  </body>
 
-  <script>
-    // Playing a round of RPS against a computer who picks his choice random
-    // Create array of "Rock", "Paper" & "Scissor"
-    // Create a function that randomly picks one value out of the array
-    // Ask the user for input (case insensitve)
-    // Create a String that declares the winner like "You win! Paper beats Rock" if the player wins, else "You lose! Paper beats Rock"
-
-    // function for creating a number between 0 and 2 (min and max size of array)
-
-    //// GLOBAL VARIABLES ////
-    const choices = ["rock", "paper", "scissors", "x"];
-    let win;
-    let lose;
-
-    function randomNumber() {
-      const min = 0;
-      const max = 3;
-      let rndNumber = Math.floor(Math.random() * max + min);
-      return rndNumber;
-    }
-
-    // Function for generating a random choice
-    function computerPlay() {
-      return choices[randomNumber()];
-    }
-
-    //UI for player
-    function playerInput() {
-      while (true) {
-        let userInput = prompt(
-          "Choose between Rock, Paper & Scissors"
-        ).toLowerCase();
-        // if the input is not of type string and is a different word than one of the three strings in the choices array, ask the user to go again, pressing x will quit the game
-        if (typeof userInput != typeof "" || !choices.includes(userInput)) {
-          console.log("Please type in one of the given choices.");
-          continue;
-        } else if (userInput === "x") {
-          return "X";
-        } else {
-          return userInput;
-        }
-      }
-    }
-
-    function playRound(playerSelection, computerSelection) {
-      // first capitalize the first word of the selections to return a nice string
-      const capPlayerSelection = playerSelection.replace(/^\w/, (c) =>
-        c.toUpperCase()
-      );
-      const capComputerSelection = computerSelection.replace(/^\w/, (c) =>
-        c.toUpperCase()
-      );
-
-      // result strings
-      win = `You won this round! ${capPlayerSelection} beats ${capComputerSelection}`;
-      lose = `You lost this round! ${capComputerSelection} beats ${capPlayerSelection}`;
-
-      // 0 == rock, 1 == paper, 2 == scissors
-      switch (true) {
-        case playerSelection === "X":
-          return "X";
-
-        case playerSelection === computerSelection:
-          return "You made the same choice.";
-
-        // if player chooses rock -> check if computer chose paper
-        case playerSelection === choices[0]:
-          if (computerSelection === choices[1]) {
-            return lose;
-          } else {
-            return win;
-          }
-        // if player chooses paper -> check if computer chose scissors
-        case playerSelection === choices[1]:
-          if (computerSelection === choices[2]) {
-            return lose;
-          } else {
-            return win;
-          }
-        // if player chosses scissors -> check if computer chose rock
-        case playerSelection === choices[2]:
-          if (computerSelection === choices[0]) {
-            return lose;
-          } else {
-            return win;
-          }
-      }
-    }
-
-    // function for the whole game, best out of five wins
-    function game() {
-      console.log("Welcome to the smallest Version of Rock, Paper, Scissors!");
-      console.log("BEST OF 5 WINS");
-
-      let playerCount = 0;
-      let computerCount = 0;
-
-      while (playerCount < 5 && computerCount < 5) {
-        let userSelection = playerInput();
-        let compSelection = computerPlay();
-        let result = playRound(userSelection, compSelection);
-        console.log(result);
-
-        if (result === win) {
-          playerCount++;
-        } else if (result === lose) {
-          computerCount++;
-        } else if (result === "X") {
-          computerCount = 10;
-          break;
-        } else {
-          continue;
-        }
-        console.log(
-          `Score:\nPlayer: ${playerCount}\tComputer: ${computerCount}`
-        );
-      }
-
-      if (playerCount > computerCount) {
-        console.log("Player won");
-        alert("HUMAN WINS! THE WORLD IS SAVED!");
-      } else {
-        console.log("Computer won");
-        alert("COMPUTER WINS! THE MACHINES WILL TAKE OVER!");
-      }
-    }
-
-    game();
-  </script>
+  <script src="rps.js"></script>
 </html>
