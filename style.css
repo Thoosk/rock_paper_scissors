@@ -90,6 +90,7 @@ table {
 
 #buttons {
   width: 100vh;
+  margin-top: 2rem;
   display: flex;
   flex: row wrap;
   justify-content: space-around;
@@ -141,18 +142,11 @@ img {
   align-items: center;
 }
 
-#scoreboard h2 {
-  /*font-family: king_arthur;*/
-  font-weight: bold;
-  font-size: 2rem;
-  line-height: 1rem;
-  text-shadow: black 1px 0.5px;
-}
-
 #scoreboard p {
   font-weight: bold;
   font-size: 2rem;
   margin-top: 3rem;
+  text-decoration: underline;
 }
 
 #results {
